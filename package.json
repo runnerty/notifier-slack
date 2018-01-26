@@ -1,0 +1,24 @@
+{
+  "name": "@runnerty/notifier-slack",
+  "version": "1.0.0",
+  "description": "Runnerty module: Slack notifier",
+  "author": "Coderty",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runnerty/notifier-slack.git"
+  },
+  "keywords": [
+    "runnerty",
+    "notifier",
+    "slack"
+  ],
+  "bugs": {
+    "url": "https://github.com/runnerty/notifier-slack/issues"
+  },
+  "homepage": "https://github.com/runnerty/notifier-slack#readme",
+  "dependencies": {
+    "@slack/client": "^3.15.0"
+  }
+}
