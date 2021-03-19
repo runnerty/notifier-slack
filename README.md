@@ -122,5 +122,7 @@ Add in [plan.json]:
 [npm-image]: https://img.shields.io/npm/v/@runnerty/notifier-slack.svg
 [david-badge]: https://david-dm.org/runnerty/notifier-slack.svg
 [david-badge-url]: https://david-dm.org/runnerty/notifier-slack
-[config.json]: http://docs.runnerty.io/config/
-[plan.json]: http://docs.runnerty.io/plan/
+[config.json]: https://docs.runnerty.io/config/
+[notifiers]: https://docs.runnerty.io/notifiers
+[plan.json]: https://docs.runnerty.io/plan/
+[runnerty-cli]: https://www.npmjs.com/package/runnerty-cli
