@@ -4,12 +4,7 @@
   "definitions": {
     "config": {
       "type": "object",
-      "required": [
-        "id",
-        "type",
-        "token",
-        "channel"
-      ],
+      "required": ["id", "type", "token", "channel"],
       "properties": {
         "id": {
           "type": "string"
@@ -37,9 +32,7 @@
     },
     "params": {
       "type": "object",
-      "required": [
-        "id"
-      ],
+      "required": ["id"],
       "properties": {
         "id": {
           "type": "string"
@@ -55,6 +48,16 @@
         },
         "message": {
           "type": "string"
+        },
+        "markdown": {
+          "type": "boolean"
+        },
+        "link_names": {
+          "type": "boolean"
+        },
+        "parse": {
+          "type": "string",
+          "enum": ["full", "none"]
         },
         "bot_emoji": {
           "type": "string"

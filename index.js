@@ -13,32 +13,39 @@ class slackNotifier extends Notifier {
     try {
       if (!notification.token) throw new Error('should have required property token');
       if (!notification.channel) throw new Error('should have required property channel');
-      if (!notification.message && !notification.attachments) throw new Error('should have required property message');
       const token = notification.token;
       const web = new WebClient(token);
-      const data = {
-        text: notification.title,
-        channel: notification.channel,
-        icon_emoji: notification.bot_emoji,
-        username: notification.bot_name,
-        attachments: [
-          {
-            text: notification.message,
-            color: notification.color
-          }
-        ]
-      };
-      if (notification.attachments) data.attachments = notification.attachments;
-      await web.chat.postMessage(data);
+      // Messages:
+      if (notification.message || notification.attachments) {
+        const data = {
+          text: notification.title,
+          channel: notification.channel,
+          icon_emoji: notification.bot_emoji,
+          username: notification.bot_name,
+          attachments: [
+            {
+              text: notification.message,
+              color: notification.color
+            }
+          ]
+        };
+        if (notification.attachments) data.attachments = notification.attachments;
+        if (notification.markdown) data.mrkdwn = true;
+        if (notification.link_names) data.link_names = true;
+        if (notification.parse) data.parse = notification.parse;
+
+        await web.chat.postMessage(data);
+      } else {
+        if (!notification.file) throw new Error('should have required property message');
+      }
+      // File upload:
       try {
         if (notification.file) {
           await web.files.upload({
             filename: path.basename(notification.file),
             file: createReadStream(notification.file),
             channels: notification.channel,
-            title: notification.title,
-            username: notification.bot_name,
-            icon_emoji: notification.bot_emoji
+            title: notification.title
           });
         }
       } catch (err) {
