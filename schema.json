@@ -7,7 +7,7 @@
       "required": [
         "id",
         "type",
-        "webhookurl",
+        "token",
         "channel"
       ],
       "properties": {
@@ -18,7 +18,7 @@
           "type": "string",
           "pattern": "@runnerty-notifier-slack"
         },
-        "webhookurl": {
+        "token": {
           "type": "string"
         },
         "channel": {
@@ -38,8 +38,7 @@
     "params": {
       "type": "object",
       "required": [
-        "id",
-        "message"
+        "id"
       ],
       "properties": {
         "id": {
@@ -61,6 +60,9 @@
           "type": "string"
         },
         "color": {
+          "type": "string"
+        },
+        "file": {
           "type": "string"
         }
       }

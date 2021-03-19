@@ -1,0 +1,10 @@
+{
+  "notifiers": [
+    {
+      "id": "slack_default",
+      "type": "@runnerty-notifier-slack",
+      "token": "ABC123",
+      "channel": "ABC123"
+    }
+  ]
+}
