@@ -14,8 +14,24 @@
 
 ### Installation:
 
+Through NPM
+
 ```bash
-npm i @runnerty/notifier-console
+npm i @runnerty/notifier-slack
+```
+
+You can also add modules to your project with [runnerty-cli]
+
+```bash
+npx runnerty-cli add @runnerty/notifier-slack
+```
+
+This command installs the module in your project, adds example configuration in your `config.json`.
+
+If you have installed [runnerty-cli] globally you can include the module with this command:
+
+```bash
+rty add @runnerty/notifier-slack
 ```
 
 ### Configuration sample:
@@ -42,18 +58,61 @@ Add in [config.json]:
 
 Add in [plan.json]:
 
+- Simple
+
 ```json
 {
-  "notifications": {
-    "on_fail": [
-      {
-        "id": "slack_default",
-        "bot_emoji": ":metal:",
-        "channel": "my_runnerty_channel",
-        "message": "PROCESS *:PROCESS_ID* OF CHAIN :CHAIN_ID RUNNING!"
-      }
-    ]
-  }
+  "id": "slack_default",
+  "bot_emoji": ":metal:",
+  "channel": "my_runnerty_channel",
+  "message": "PROCESS *:PROCESS_ID* OF CHAIN :CHAIN_ID RUNNING!"
+}
+```
+
+- Attachments
+
+```json
+{
+  "id": "slack_default",
+  "bot_name": "Runnerty Bot",
+  "bot_emoji": ":metal:",
+  "channel": "my_runnerty_channel",
+  "attachments": [
+    {
+      "fallback": "Required plain-text summary of the attachment.",
+      "color": "#36a64f",
+      "pretext": "Simple sample pretext",
+      "author_name": "Runnerty Bot",
+      "author_link": "https://github.com/runnerty/notifier-slackhttp://runnerty.io",
+      "author_icon": "https://runnerty.io/assets/header/logo-stroked.png",
+      "title": "Slack attachment sample",
+      "title_link": "https://api.slack.com/docs/messages/builder",
+      "text": "More info",
+      "fields": [
+        {
+          "title": "Priority",
+          "value": "High",
+          "short": false
+        }
+      ],
+      "image_url": "http://my-website.com/path/to/image.jpg",
+      "thumb_url": "https://runnerty.io/assets/header/logo-stroked.png",
+      "footer": "Runnerty Notifier Slack Sample",
+      "footer_icon": "https://runnerty.io/assets/header/logo-stroked.png"
+    }
+  ]
+}
+```
+
+- Upload File
+
+```json
+{
+  "id": "slack_default",
+  "bot_emoji": ":metal:",
+  "channel": "my_runnerty_channel",
+  "message": "PROCESS *:PROCESS_ID* OF CHAIN :CHAIN_ID RUNNING!",
+  "file": "./resume.csv"
 }
 ```
 
