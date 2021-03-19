@@ -44,9 +44,9 @@ Add in [config.json]:
     {
       "id": "slack_default",
       "type": "@runnerty-notifier-slack",
-      "webhookurl": "https://hooks.slack.com/services/ABC123/ABC123/ABC123",
+      "token": "MY_BOT_TOKEN",
       "bot_name": "Runnerty-Sentinel",
-      "channel": "my_runnerty_channel",
+      "channel": "MY_CHANNEL",
       "maxConcurrents": 1,
       "minInterval": 600
     }
@@ -64,7 +64,7 @@ Add in [plan.json]:
 {
   "id": "slack_default",
   "bot_emoji": ":metal:",
-  "channel": "my_runnerty_channel",
+  "channel": "MY_CHANNEL",
   "message": "PROCESS *:PROCESS_ID* OF CHAIN :CHAIN_ID RUNNING!"
 }
 ```
@@ -76,7 +76,7 @@ Add in [plan.json]:
   "id": "slack_default",
   "bot_name": "Runnerty Bot",
   "bot_emoji": ":metal:",
-  "channel": "my_runnerty_channel",
+  "channel": "MY_CHANNEL",
   "attachments": [
     {
       "fallback": "Required plain-text summary of the attachment.",
@@ -110,7 +110,7 @@ Add in [plan.json]:
 {
   "id": "slack_default",
   "bot_emoji": ":metal:",
-  "channel": "my_runnerty_channel",
+  "channel": "MY_CHANNEL",
   "message": "PROCESS *:PROCESS_ID* OF CHAIN :CHAIN_ID RUNNING!",
   "file": "./resume.csv"
 }
